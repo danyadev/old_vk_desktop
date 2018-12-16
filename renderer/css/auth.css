@@ -1,0 +1,92 @@
+.open_settings {
+  position: absolute;
+  bottom: 6px;
+  left: 5px;
+  width: 24px;
+  height: 22px;
+  background-color: #c2c2c2;
+  -webkit-mask-size: cover;
+  -webkit-mask-image: url('../images/menu_settings.png');
+  transition: background-color .3s;
+}
+
+.open_multiacc {
+  position: absolute;
+  bottom: 32px;
+  left: 5px;
+  width: 24px;
+  height: 22px;
+  background-color: #c2c2c2;
+  -webkit-mask-size: cover;
+  -webkit-mask-image: url('../images/menu_groups.png');
+  transition: background-color .3s;
+}
+
+.open_settings:hover, .open_multiacc:hover { background-color: #a6a6a6 }
+
+.wrapper_login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper_content:not(.active) { display: none }
+
+.login_logo {
+  width: 125px;
+  height: 125px;
+  margin-top: -70px;
+  margin-bottom: 25px;
+}
+
+.login_title {
+  font-size: 25px;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.input_form { margin: 28px 0 5px 0 }
+.password_input { position: relative }
+
+.login_input, .password_input input {
+  display: block;
+  margin-bottom: 8px;
+  padding-right: 28px;
+}
+
+.show_password, .account_show_password {
+  position: absolute;
+  right: 0;
+  width: 34px;
+  height: 34px;
+  -webkit-mask-image: url('../images/show_password_hidden.svg');
+  -webkit-mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  background-color: #c2c2c2;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.show_password:hover,
+.account_show_password:hover { background-color: #aaa }
+
+.show_password.active,
+.account_show_password.active {
+  -webkit-mask-image: url('../images/show_password_showed.svg');
+}
+
+.twofa_info {
+  text-align: center;
+  margin: 6px 0;
+}
+
+.error_info { color: red }
+
+.bottom_info {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+}

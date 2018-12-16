@@ -1,0 +1,134 @@
+.messages_wrap {
+  height: 100%;
+  background: #fff;
+
+  --border-color: #d7d8db;
+}
+
+.messages_dialogs_wrap {
+  height: 100%;
+  width: 280px;
+  border-right: 1px solid var(--border-color);
+  float: left;
+}
+
+.messages_search, .messages_settings {
+  width: 100%;
+  height: 45px;
+}
+
+.messages_search {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.messages_settings {
+  border-top: 1px solid var(--border-color);
+}
+
+.messages_dialogs {
+  height: calc(100% - 90px);
+  overflow: auto;
+}
+
+.messages_dialog {
+  display: flex;
+  padding: 8px;
+}
+
+.messages_dialog:not(:last-child) { border-bottom: 1px solid var(--border-color) }
+
+.messages_dialog_photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: SFCompactRoundedMedium;
+  color: white;
+  user-select: none;
+  cursor: default;
+}
+
+.messages_dialog_info {
+  margin: 4px 0;
+  width: calc(100% - 60px);
+}
+
+.messages_dialog_title_line { display: flex }
+
+.messages_dialog_title_wrap {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.messages_dialog_title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.messages_dialog_title_wrap .img_verified {
+  flex: none;
+  margin: 2px 0 1px 3px;
+}
+
+.messages_dialog_time {
+  margin-left: 3px;
+  color: #777e8c;
+}
+
+.messages_dialog_message {
+  display: flex;
+  margin-top: 4px;
+}
+
+.messages_dialog_author:not(:empty) {
+  color: #656565;
+  white-space: nowrap;
+  margin-right: 3px;
+}
+
+.messages_dialog_text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  color: #222;
+}
+
+.messages_dialog_text .link:hover {
+  cursor: text;
+  text-decoration: none;
+}
+
+.messages_dialog_unread {
+  padding: 0 6px;
+  margin: 2px 0 0 3px;
+  border-radius: 10px;
+  background-color: #5181b8;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.messages_dialog_unread:not(.outread):empty { display: none }
+.messages_dialog_unread:not(.outread).muted { background-color: #b2b7c2 }
+
+.messages_dialog_unread.outread {
+  padding: 0;
+  margin: 7px 4px 0 4px;
+  min-width: 8px;
+  height: 8px;
+  background-color: rgba(147, 173, 200, 1);
+}
+
+.messages_histories {
+  float: left;
+  width: calc(100% - 280px);
+}

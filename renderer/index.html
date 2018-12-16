@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='main.css'>
+    <script src='main.js' defer></script>
+  </head>
+  <body>
+    <div class="titlebar theme_block">
+      <div class="titlebar_drag">VK Desktop</div>
+      <img class="titlebar_icon" src="images/logo.png">
+      <div class="titlebar_buttons">
+        <div class="titlebar_button minimize"></div>
+        <div class="titlebar_button maximize"></div>
+        <div class="titlebar_button restore"></div>
+        <div class="titlebar_button close"></div>
+      </div>
+    </div>
+    <div class="wrapper_login theme_bgc">
+      <div class="open_multiacc" title='Открыть меню выбора аккаунтов'></div>
+      <div class="open_settings" title='Открыть настройки'></div>
+      <img class="login_logo" src="images/logo.png">
+      <div class="login_title">VK Desktop</div>
+      <div class="input_form">
+        <input type="text" placeholder="Введите логин" class='input login_input' autofocus>
+        <div class="password_input">
+          <div class="show_password"></div>
+          <input type="password" class="input" placeholder="Введите пароль">
+        </div>
+        <input type="text" placeholder="Введите код из смс" class='input sms_code_input' style='display: none'>
+        <div class="twofa_info"></div>
+        <input type="button" value="Отмена" class='button login_cancel' style='display: none'>
+        <input type="button" value="Войти" class='button login_button' disabled>
+      </div>
+      <div class="error_info"></div>
+      <div class="bottom_info">
+        <div class='link token_auth' onclick='modal.authToken.toggle()'>Войти через access_token</div>
+      </div>
+    </div>
+    <div class="wrapper_content">
+      <div class="open_menu_wrap">
+        <div class="open_menu"><div class="open_menu_icon"></div></div>
+      </div>
+      <div class="menu">
+        <div class="menu_items theme_bgc">
+          <div class="menu_account_item">
+            <div class="menu_account_bgc"></div>
+            <div class="menu_multiacc"></div>
+            <div class="acc_icon"></div>
+            <div class="menu_acc_name"></div>
+            <div class="menu_acc_status"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content theme_bgc">
+        <div class="tab_content">Моя страница</div>
+        <div class="tab_content news_wrap">
+          <div class="block stories_list"></div>
+          <div class="news_list loading"></div>
+        </div>
+        <div class="tab_content messages_wrap">
+          <div class="messages_dialogs_wrap">
+            <div class="messages_search"></div>
+            <div class="messages_dialogs loading"></div>
+            <div class="messages_settings"></div>
+          </div>
+          <div class="messages_histories"></div>
+        </div>
+        <div class="tab_content content_audio">
+          <div class="audioplayer theme_block">
+            <div class="player_cover"></div>
+            <div class="player_buttons">
+              <div class="player_button" title='Предыдущая аудиозапись'>
+                <div class="player_back"></div>
+              </div>
+              <div class="player_play" title='Воспроизвести'></div>
+              <div class="player_button" title='Следующая аудиозапись'>
+                <div class="player_next"></div>
+              </div>
+            </div>
+            <div class="player_name_line">
+              <div class="player_name_wrap">
+                <div class="player_real_time player_active_time"></div>
+                <div class="player_played_time">0:00</div>
+                <div class="player_name"> </div>
+              </div>
+              <div class="player_progress_wrap">
+                <div class="player_progress">
+                  <div class="player_progress_all"></div>
+                  <div class="player_progress_loaded"></div>
+                  <div class="player_progress_played"></div>
+                </div>
+              </div>
+            </div>
+            <div class="player_utils">
+              <div class="player_util_icons">
+                <div class="player_icon player_icon_repeat" title='Повтор'></div>
+                <div class="player_icon player_icon_recoms" title='Показать похожие'></div>
+              </div>
+              <div class="player_volume_wrap">
+                <div class="player_volume">
+                  <div class="player_volume_all"></div>
+                  <div class="player_volume_this"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="audiolist_wrap theme_block">
+            <div class="audiolist_header">
+              <div class="audiolist_header_item">Моя музыка</div>
+              <div class="audiolist_header_item">Плейлисты</div>
+              <div class="audiolist_header_item">Рекомендации</div>
+              <div class="audiolist_header_item">Обновления друзей</div>
+              <div class="audiolist_header_add"></div>
+            </div>
+            <div class="audiolist_content">
+              <div class="audiolist_info loading"></div>
+              <div class="audiolist_utils">
+                <div class="audiolist_shuffle">Перемешать аудиозаписи</div>
+                <div class="audiolist_sort_wrap">
+                  <div class="audiolist_sort link">по умолчанию</div>
+                  <div class="audiolist_sort_popup">
+                    <div class="audiolist_sort_header">по умолчанию</div>
+                    <div class="audiolist_sort_items">
+                      <div class="audiolist_sort_item active">по умолчанию</div>
+                      <div class="audiolist_sort_item">в случайном порядке</div>
+                      <div class="audiolist_sort_item">в обратном порядке</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="audiolist"></div>
+            </div>
+            <div class="audiolist_content">Плейлисты скоро будут</div>
+            <div class="audiolist_content">Рекомендации будут еще скорее</div>
+            <div class="audiolist_content">Обновления друзей хз когда сделаю</div>
+          </div>
+        </div>
+        <div class="tab_content">
+          <div class="notifications_list"></div>
+          <div class="notifications_list_err">
+            <div class="block mini">
+              <div class="notifications_item_err item_err">Скоро</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab_content">
+          <div class="friends_list"></div>
+          <div class="friends_list_err">
+            <div class="block mini">
+              <div class="friend_item_err item_err">Загрузка...</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab_content groups">
+          <div class="groups_wrap theme_block">
+            <div class="groups_header">
+              <div class="groups_header_item active">Все сообщества</div>
+              <!-- <div class="groups_header_item">Управление</div> -->
+              <div class="groups_header_item button">Создать сообщество</div>
+            </div>
+            <div class="groups_content_wrap loading">
+              <div class="groups_list"></div>
+              <div class="groups_manage"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tab_content">Фотографии</div>
+        <div class="tab_content">Видеозаписи</div>
+        <div class="tab_content">
+          <div class="settings_wrap">
+            <div class="settings_tabs theme_block">
+              <div class="settings_tab">Основные</div>
+              <div class="settings_tab">Интерфейс</div>
+              <!-- <div class="settings_tab">Аккаунт</div> -->
+              <div class="settings_tab">О программе</div>
+            </div>
+            <div class="settings_content_block">
+              <div class="settings_content">
+                <div class="settings_block theme_block">
+                  <div class="settings_line">
+                    <div class="settings_left_block">Прокси</div>
+                    <div class="settings_right_block">
+                      <div class="settings_checkbox use_proxy">Использовать прокси</div>
+                    </div>
+                  </div>
+                  <div class="settings_line">
+                    <div class="settings_left_block">Обновление</div>
+                    <div class="settings_right_block">
+                      <div class="settings_checkbox check_updates">Проверять обновления</div>
+                    </div>
+                    <div class="settings_right_block">
+                      <div class="settings_checkbox get_beta_versions">Получать бета версии</div>
+                    </div>
+                    <div class="settings_right_block">
+                      <div class="settings_checkbox notify_updates">Уведомлять об обновлениях</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="settings_block theme_block">
+                  <div class="settings_line logout">Выйти</div>
+                </div>
+              </div>
+              <div class="settings_content">
+                <div class="settings_block theme_block">
+                  <div class="settings_line">
+                    <div class="settings_left_block center">Тема</div>
+                    <div class="settings_right_block">
+                      <div class='select change_theme'>
+                        <div class="select_sel_wrap">
+                          <div class="select_icon"></div>
+                          <div class="select_selected"></div>
+                        </div>
+                        <div class="select_list"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="settings_line">
+                    <div class="settings_left_block center">Вкладка по умолчанию</div>
+                    <div class="settings_right_block">
+                      <div class='select change_def_tab'>
+                        <div class="select_sel_wrap">
+                          <div class="select_icon"></div>
+                          <div class="select_selected"></div>
+                        </div>
+                        <div class="select_list"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="settings_line">
+                    <div class="settings_left_block center">Пункты в меню</div>
+                    <div class="settings_right_block">
+                      <div class="edit_menu_btn button_light theme_bgc">Изменить</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="settings_content">
+                <div class="settings_block theme_block">
+                  <div class="settings_line">
+                    <div class="settings_left_block">Адрес страницы</div>
+                    <div class="custom_input theme_bgc">
+                      <div class="custom_input_prefix">https://vk.com/</div>
+                      <input type="text" class="custom_input_input settings_nick theme_bgc">
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="settings_content">
+                <div class="settings_block theme_block">
+                  <div class="settings_line">
+                    <img class="about_logo" src="images/logo.png">
+                    <div class="about_version"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lock_bottom">ку</div>
+  </body>
+</html>

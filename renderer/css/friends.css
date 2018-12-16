@@ -1,0 +1,30 @@
+.friends_list { padding: 10px }
+
+.friends_list_err {
+  padding: 10px;
+  margin-top: -20px;
+}
+
+.friend_img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px;
+}
+
+.friend_names {
+  float: left;
+  padding-top: 2px;
+  width: calc(100% - 84px);
+}
+
+.friend_name, .friend_occupation {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: -webkit-fill-available;
+}
+
+.friend_occupation { color: #656565 }

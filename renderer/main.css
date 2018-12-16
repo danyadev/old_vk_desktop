@@ -1,0 +1,43 @@
+@import 'css/dark_theme.css';
+@import 'css/ui.css';
+@import 'css/modal.css';
+@import 'css/auth.css';
+@import 'css/profile.css';
+@import 'css/news.css';
+@import 'css/messages.css';
+@import 'css/audio.css';
+@import 'css/notifications.css';
+@import 'css/friends.css';
+@import 'css/groups.css';
+@import 'css/photos.css';
+@import 'css/videos.css';
+@import 'css/settings.css';
+
+@font-face {
+  font-family: 'SFCompactRoundedMedium';
+  src: url('css/SFCompactRoundedMedium.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('css/OpenSans.ttf');
+}
+
+*, *::before, *::after { box-sizing: border-box }
+
+body {
+  font-family: 'OpenSans';
+  font-size: 14px;
+  margin: 0;
+  overflow: hidden;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+input::placeholder {
+  color: #939699;
+  user-select: none;
+}

@@ -1,0 +1,16 @@
+<svg width="26px" height="19px" viewBox="0 0 26 19" xmlns="http://www.w3.org/2000/svg">
+  <g id="Page-1" fill="none" fill-rule="evenodd">
+    <g id="musicUpdates">
+      <g id="Group-3">
+        <g id="tabs">
+          <g id="upload" transform="translate(-1075.000000, -140.000000) translate(325.000000, 122.000000) translate(751.000000, 15.000000)">
+            <rect id="Rectangle-17" width="24" height="24"/>
+            <path d="M7,19 L3.5,19 C1.56700338,19 0,17.4329966 0,15.5 C0,13.5670034 1.56700338,12 3.5,12 C3.67635542,12 3.84966443,12.0130432 4.01901498,12.0382177 C4.00640987,11.860452 4,11.6809745 4,11.5 C4,7.35786438 7.35786438,4 11.5,4 C15.1444251,4 18.1817285,6.59939677 18.8590229,10.0453029 C19.0683831,10.0154465 19.2823877,10 19.5,10 C21.9852814,10 24,12.0147186 24,14.5 C24,16.9852814 21.9852814,19 19.5,19 L17,19" id="Combined-Shape-Copy" stroke="#828A99" stroke-width="2" stroke-linecap="round"/>
+            <polyline id="Path-2" stroke="#828A99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="9 14 12 11 15 14"/>
+            <path d="M12,12 L12,21" id="Path-3" stroke="#828A99" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

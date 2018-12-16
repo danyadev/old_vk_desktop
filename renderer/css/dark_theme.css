@@ -1,0 +1,193 @@
+.dark .theme_block,
+.dark .block,
+.dark .option {
+  background-color: #363d48;
+  box-shadow: 0 0 0 1px #272c36;
+  color: #c2c2c2;
+}
+
+.dark .option:hover { background-color: #303845 }
+.dark .option.active { background-color: #2d3440 }
+
+.dark .theme_bgc,
+.dark .select,
+.dark .select_list {
+  background-color: #2d323a;
+  color: #c2c2c2;
+}
+
+.dark .login_title { color: #c2c2c2 }
+
+.dark .window_header {
+  background-color: #444d5c;
+}
+
+.dark .menu_item:hover,
+.dark .menu_item.active:not(.menu_account_item) {
+  background-color: #262b33;
+}
+
+.dark .link { color: #5c89d3 }
+.dark .post_btn { color: #909399 }
+
+.dark .settings_tab.active,
+.dark .select_list,
+.dark .audiolist_header {
+  background-color: #2d333d;
+}
+
+.dark .settings_tab:not(.active):hover {
+  background-color: #313742;
+}
+
+.dark .custom_input,
+.dark .settings_input { border: 1px solid #272c36 }
+
+.dark .settings_line:not(:last-child),
+.dark .audiolist_header {
+  border-bottom: 1px solid #272c36;
+}
+
+.dark .select,
+.dark .select_list {
+  box-shadow: 0 0 0 1px #272c36;
+}
+
+.dark .group_type,
+.dark .group_subs,
+.dark .friend_occupation,
+.dark .post_time {
+  color: #b5b5b5;
+}
+
+.dark .group_name,
+.dark .friend_name,
+.dark .post_name {
+  color: #d9d9d9;
+}
+
+.dark .player_progress_all,
+.dark .player_volume_all {
+  background-color: #4a4a4a;
+}
+
+.dark .player_progress_loaded { background-color: #616161 }
+
+.dark .player_progress_played,
+.dark .player_volume_this,
+.dark .player_progress_wrap:hover .player_progress_played::after,
+.dark .player_volume_wrap:hover .player_volume_this::after,
+.dark .player_progress_active .player_progress_played::after,
+.dark .player_volume_active .player_volume_this::after {
+  background-color: #8f8f8f;
+}
+
+.dark .player_cover,
+.dark .audio_cover {
+  background-color: #2a2f38;
+}
+
+.dark .audio_item:hover,
+.dark .audio_item_active,
+.dark .audiolist_shuffle:hover {
+  background-color: #2f3640;
+}
+
+.dark .audiolist_header_item,
+.dark .groups_header_item:not(.button) {
+  color: #bbb;
+}
+
+.dark .audiolist_header_item:not(.active):hover,
+.dark .groups_header_item:not(.button):not(.active):hover {
+  border-bottom: 2px solid #4c5a75;
+  color: #ccc;
+}
+
+.dark .audiolist_header_item.active,
+.dark .groups_header_item.active {
+  color: #ddd;
+}
+
+.dark .post_bottom,
+.dark .modal_bottom {
+  border-top: 1px solid #2b303b;
+}
+
+.dark .post_type { color: #bfbfbf }
+
+.dark .post_like.active::before {
+  background-color: #cc2939;
+}
+
+.dark .modal_header,
+.dark .modal_bottom {
+  background-color: #363d48;
+}
+
+.dark .button {
+  background-color: #23272b;
+  color: #ddd;
+}
+
+.dark .button:not(:disabled):hover { background-color: #202326 }
+.dark .button:not(:disabled):active { background-color: #1c1e21 }
+.dark .button:disabled { opacity: .7 }
+.dark .multiaccount_item:hover { background-color: #272a30 }
+.dark .multiaccount_nick { color: #bbb }
+
+.dark .input {
+  background-color: #363d48;
+  border: 1px solid #272c36;
+  color: #ddd;
+}
+
+.dark .input::placeholder { color: #adadad }
+.dark .input:hover { border: 1px solid #272c36 }
+.dark .input:focus { border: 1px solid #272c36 }
+
+.dark .account_show_password { background-color: #686c73 }
+.dark .account_show_password { background-color: #787b7f }
+.dark .multiaccount_remove { background-color: white }
+
+.dark .edit_menu_item {
+  border-bottom: 1px solid #25282e;
+  background-color: #2d323a;
+}
+
+.dark .edit_menu_item:hover,
+.dark .edit_menu_item.move {
+  background-color: #282c33
+}
+
+.dark .audiolist_sort_popup {
+  border: 1px solid #2b303b;
+}
+
+.dark .audiolist_sort_header { background-color: #2f3540 }
+.dark .audiolist_sort_items { background-color: #343a45 }
+.dark .audiolist_sort_item.active { background-color: #2b2f38 }
+.dark .audiolist_sort_item:not(.active):hover { background-color: #2d323b }
+
+.dark .about_version { color: #bbb }
+
+.dark .groups_header_item:not(.button) { color: #ccc }
+.dark .group_item:not(:last-child),
+.dark .groups_header { border-bottom: 1px solid #272c36 }
+
+/* сообщения */
+
+.dark .messages_wrap {
+  --border-color: #3e4959;
+  background-color: #2d323a;
+}
+
+.dark .messages_dialogs.load { color: #bbb }
+.dark .messages_dialog_author:not(:empty) { color: #999 }
+.dark .messages_dialog_text { color: #bbb }
+.dark .messages_dialog_unread.outread { background-color: #5181b8 }
+
+.dark .messages_dialog_unread:not(.outread).muted {
+  background-color: #444d5c;
+  color: #eee;
+}
