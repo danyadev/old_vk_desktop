@@ -68,11 +68,7 @@ var load = () => {
     buttons: [{ text: 'ОК' }, { text: 'Отмена', role: 'close' }],
     init: (modal) => {
       modal.buttons[0].addEventListener('click', () => {
-        settings.def_tab = defaultSettings.def_tab;
-        settings.save();
-
         users.remove(users.get().id);
-
         getCurrentWindow().reload();
       });
     }
@@ -80,8 +76,6 @@ var load = () => {
 
   qs('.logout').addEventListener('click', () => exitModal.toggle());
   qs('.edit_menu_btn').addEventListener('click', () => modal.editMenu.toggle());
-
-  qs('.about_version').innerHTML = `Версия ${packageJSON.version} (${packageJSON.build})`;
 }
 
 var selectize = (sel, init, change) => {

@@ -167,34 +167,14 @@
   visibility: visible;
 }
 
-.menu_items {
-  height: 100%;
-  overflow-x: hidden;
-}
-
-.menu_items.update { height: calc(100vh - 201px) }
-
-.menu_item {
-  height: 44px;
-  padding-top: 10px;
-  cursor: pointer;
-  transition: background-color .3s;
-}
-
-.menu_item.disabled { display: none }
-.menu_item.active { transition: background-color .3s }
-
-.menu_item:hover, .menu_item.active:not(.menu_account_item) {
-  background-color: #ebeced;
-}
-
 /* панелька пользователя */
 
 .menu_account_item {
   position: relative;
+  overflow: hidden;
   height: 125px;
   padding: 8px 10px 10px 12px;
-  background-color: rgba(38, 37, 37, 0.5);
+  background-color: rgba(38, 37, 37, .5);
 }
 
 .menu_account_bgc {
@@ -204,10 +184,8 @@
   top: -5px;
   right: -5px;
   z-index: -1;
-  background-repeat: no-repeat;
-  background-position: 0 -60px;
-  background-size: 100%;
-  filter: blur(4px);
+  object-fit: cover;
+  filter: blur(3px);
 }
 
 .menu_multiacc {
@@ -233,7 +211,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
 }
 
 .menu_acc_name {
@@ -248,10 +226,49 @@
 
 /* список меню */
 
+.menu_items {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.menu_item.disabled { display: none }
+
+.menu_item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 8px;
+  padding-top: 0;
+  border-radius: 5px;
+}
+
+.menu_item, .menu_icon, .menu_item_name {
+  transition: background-color .3s, color .3s;
+}
+
+.menu_item:hover {
+  background-color: #eaeff6;
+}
+
+.menu_item.active:not(.menu_account_item) {
+  background-color: #eaeff6;
+}
+
+.menu_item.active .menu_icon {
+  background-color: #5181b8;
+}
+
+.menu_item.active .menu_item_name {
+  color: #3e70a9;
+}
+
+.menu_item_name { user-select: none }
+
 .menu_icon {
   width: 24px;
   height: 22px;
-  margin-left: 10px;
+  margin: 0 10px;
   background-color: #a6a6a6;
   -webkit-mask-size: cover;
 }
@@ -265,29 +282,6 @@
 .menu_photos_icon        { -webkit-mask-image: url('../images/menu_photos.png')        }
 .menu_videos_icon        { -webkit-mask-image: url('../images/menu_videos.png')        }
 .menu_settings_icon      { -webkit-mask-image: url('../images/menu_settings.png')      }
-
-.menu_icon, .menu_item_name { float: left }
-
-.menu_item_name {
-  margin: 1px 0 0 10px;
-  user-select: none;
-  transition: color .3s;
-}
-
-.update_item {
-  padding-top: 12px;
-  background-color: #4a76a8;
-  color: #eee;
-}
-
-.update_item:hover { background-color: #3f6999 !important }
-.update_item:active { background-color: #325c8c !important }
-
-.update_item .menu_item_name {
-  float: none;
-  text-align: center;
-  margin: 0;
-}
 
 .content {
   height: calc(100vh - 32px);
