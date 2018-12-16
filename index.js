@@ -1,24 +1,27 @@
 const { app, BrowserWindow, Menu } = require('electron');
 const fs = require('fs');
 
-let win = null,
-    lastChangeTime = null,
-    appPath = app.getAppPath().replace(/\\/g, '/');
+let win, lastChangeTime;
 
-if(!appPath.match(/resources\/app$/)) {
+// Упрощенная версия electron-reload, только без десятков зависимостей :)
+if(!app.isPackaged) {
   fs.watch('.', { recursive: true }, (event, filename) => {
     let prevChangeTime = lastChangeTime;
     lastChangeTime = new Date().getTime();
-
-    if(prevChangeTime < lastChangeTime - 100) return;
+    if(prevChangeTime < lastChangeTime - 250 || !filename) return;
 
     let path = filename.replace(/\\/g, '/'),
-        ignore = [
-          '.git', 'core', 'docs', '.gitignore', 'changelog.txt',
-          'index.js', 'LICENSE', 'package.json', 'README.md'
-        ].find((ignPath) => ignPath == path || path.match(new RegExp(`${ignPath}/`)));
+        ignoredFiles = [
+          '.git', 'core', '.gitignore', 'index.js',
+          'LICENSE', 'package.json', 'README.md'
+        ];
 
-    if(ignore) return;
+    let isIgnored = ignoredFiles.find((ignoredPath) => {
+      let regexp = new RegExp(`${ignoredPath}/`);
+      return ignoredPath == path || path.match(regexp);
+    });
+
+    if(isIgnored) return;
 
     BrowserWindow.getAllWindows().forEach((win) => {
       win.webContents.reloadIgnoringCache();

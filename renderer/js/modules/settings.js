@@ -52,35 +52,6 @@ var load = () => {
     settings.set('def_tab', [].slice.call(list.children).indexOf(event.target));
   });
 
-  var checkUpdates = checkboxize({
-    elem: qs('.check_updates'),
-    default: settings.update,
-    click: bool => {
-      settings.update = bool;
-      if(settings.beta && bool) getBetaVersions.enable();
-      settings.save();
-    }
-  });
-
-  var getBetaVersions = checkboxize({
-    elem: qs('.get_beta_versions'),
-    default: settings.update && settings.beta,
-    click: bool => {
-      settings.beta = bool;
-      if(bool) checkUpdates.enable();
-      settings.save();
-    }
-  });
-
-  var notifyUpdates = checkboxize({
-    elem: qs('.notify_updates'),
-    default: settings.notify_updates,
-    click: bool => {
-      settings.notify_updates = bool;
-      settings.save();
-    }
-  });
-
   var useProxy = checkboxize({
     elem: qs('.use_proxy'),
     default: settings.proxy,
@@ -143,14 +114,6 @@ var selectize = (sel, init, change) => {
     change(event, list);
   });
 }
-
-// qs('.custom_input').addEventListener('click', () => {
-//   qs('.custom_input_input').focus();
-// });
-
-// vkapi.method('account.getProfileInfo').then(data => {
-//   qs('.settings_nick').value = data.response.screen_name || `id${users.get().id}`;
-// });
 
 var checkboxize = (opts) => {
   if(!opts) return;

@@ -69,9 +69,7 @@ var init = async (user) => {
       user: API.users.get({ fields: "status,photo_100,verified,screen_name,sex" })[0],
       isTester: API.groups.isMember({ group_id: "testpool" })
     };`
-  }), Longpoll = require('./Longpoll');
-
-  require('./modules/messages').startLongpoll(new Longpoll(data.response.lp));
+  });
 
   user = Object.assign(user, data.response.user);
   user.isTester = data.response.isTester;

@@ -23,7 +23,6 @@ var updateTheme = () => {
 }
 
 updateTheme();
-require('./js/update').check();
 
 var content = qs('.content'),
     wrapper_content = qs('.wrapper_content'),
